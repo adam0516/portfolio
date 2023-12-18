@@ -1,0 +1,153 @@
+body {
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+.window {
+    position: absolute;
+    background: #ffffffb0;
+
+backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    
+    /*The transition will be temporarily disabled when moving in the js*/
+    transition: all 0.12s ease-in-out;
+    
+
+    min-width: 400px;
+    min-height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+}
+.no-transition {
+    transition: none !important;
+}
+
+.window-header {
+    width: 100%;
+    height: 50px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.window-title-buttons {
+    gap: 5px;
+    padding: 0 10px;
+}
+.window-title-buttons-secondary {
+    gap: 5px;
+    align-items: center;
+    padding: 0 10px;
+}
+.window-title-text {
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.window-content {
+    padding: 10px;
+    height: calc(100% - 20px - 50px);
+    width: calc(100% - 20px);
+    overflow: auto;
+}
+.window.minimized {
+    top:100% !important;
+    left: 50% !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    border-radius: 20% !important;
+    opacity: 0 !important;
+    transform: translateX(-50%) !important;
+}
+.window.minimized .window-content {
+    display: none;
+}
+.window.maximized {
+    top: 0;
+    left: 0;
+    max-width: 100% ;
+    min-width: 100% ;
+    max-height: 100% ;
+    min-height: 100% ;
+    border-radius: 5px !important;
+    opacity: 1 ;
+    transform: translateX(0%);
+}
+.window.maximized .window-header {
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #f1f1f1;
+    border-top: 1px solid #e5e5e5;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+.taskbar-window {
+    padding: 5px 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    
+}
+.taskbar-window.active {
+    background: #09091130;
+}
+.taskbar-window:hover {
+    background: #09091150;
+}
+.taskbar-windows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.wallpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
